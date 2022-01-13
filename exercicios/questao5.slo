@@ -1,0 +1,67 @@
+início {
+    inteiro: n;
+    
+    caractere: cidade;
+    caractere: estado;
+    inteiro: quantidade_acidente;
+    inteiro: quantidade_veiculos;
+    
+    real: soma;
+    real: media;
+    real: soma_veiculos;
+    real: media_veiculos;
+    inteiro: contador_veiculos;
+    inteiro: maior;
+    inteiro: menor;
+    
+    caractere: maior_cidade;
+    caractere: menor_cidade;
+   
+    real: soma_rs;
+    real: media_rs;
+    inteiro: acidentes_rs;
+    inteiro: contador_rs;
+   
+    n = 1;
+    menor = 9999;
+    maior = 0;
+    contador_veiculos = 0;
+    contador_rs = 0;
+    
+    repita {
+        n ++;
+        
+        leia("Digite o código da cidade", cidade);
+        leia("Digite o código do estado", estado);
+        leia("Digite a quantidade de acidentes", quantidade_acidente);
+        leia("Digite a quantidade de veiculos", quantidade_veiculos);
+        contador_veiculos += 1;
+        
+        soma_veiculos += quantidade_veiculos;
+        
+        se(quantidade_acidente > maior) {
+            maior = quantidade_acidente;
+            maior_cidade = cidade;
+        }
+        
+        se(quantidade_acidente < menor) {
+            menor = quantidade_acidente;
+            menor_cidade = cidade;
+        }
+        
+        se(estado == "RS") {
+            leia("Quantos acidentes teve nas cidades do RS?", acidentes_rs);
+            contador_rs += 1;
+            soma_rs += acidentes_rs;
+        }
+        
+    } enquanto (n <= 20);
+    
+    media_veiculos = soma_veiculos / contador_veiculos;
+    media_rs = soma_rs / contador_rs;
+    
+    escreva("maior quantidade: " + maior + " com a cidade: " + maior_cidade);
+    escreva("menor quantidade: " + menor + " com a cidade: " + menor_cidade);
+    escreva("A media de veiculos é de: " + media_veiculos);
+    escreva("A media de acidentes com vitimas nas cidades do RS foi de: " + media_rs);
+}

@@ -1,0 +1,40 @@
+início {
+    inteiro: contador;
+    real: salario_populacao;
+    real: soma;
+    real: media_salarial;
+    real: quantidade_populacao;
+    
+    real: quantidade_filhos;
+    real: media_filhos;
+    
+    real: menor_salario;
+    menor_salario = 100;
+    
+    real: percentual;
+    percentual = 0;
+    
+    leia("digite a quantidade de habitantes: ", quantidade_populacao);
+    enquanto(contador < quantidade_populacao) {
+        leia("digite o salario da populacao", salario_populacao);
+        soma += salario_populacao;
+        contador ++;
+        
+        se (salario_populacao < menor_salario) {
+            menor_salario = salario_populacao;
+        }
+        
+        se(salario_populacao <= 1090) {
+            percentual += 1;
+        }
+    }
+    
+    leia("digite a quantidade de filhos", quantidade_filhos);
+    media_salarial = soma / contador;
+    media_filhos = quantidade_populacao / quantidade_filhos;
+    
+    escreva("a media salarial da populacao eh: " + media_salarial);
+    escreva("a media de numero de filhos eh de: " + media_filhos);
+    escreva("menor salario eh de: " + menor_salario);
+    escreva("O percentual de pessoas com salario ate 1090 é de: " + percentual);
+}

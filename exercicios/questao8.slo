@@ -1,0 +1,10 @@
+início {
+    inteiro: contador;
+    
+    para contador de 300 até 600 passo 1 {
+        se(contador % 2 <> 0) {
+            escreva(contador);
+        }
+    }
+    
+}

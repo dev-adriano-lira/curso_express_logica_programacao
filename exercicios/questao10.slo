@@ -1,0 +1,63 @@
+início {
+    inteiro: n;
+    inteiro: cont_m;
+    inteiro: cont_f;
+    
+    inteiro: sexo;
+    real: altura; 
+    real: soma_m;
+    real: soma_f;
+    real: media_m;
+    real: media_f;
+    real: media_turma;
+    
+    
+    real: maior_altura_turma;
+    real: menor_altura_turma;
+    real: maior_altura_masc;
+    real: menor_altura_masc;
+    real: maior_altura_fem;
+    real: menor_altura_fem;
+    
+    maior_altura_turma = 0;
+    menor_altura_turma = 999;
+    cont_m = 0;
+    cont_f = 0;
+    
+    para n de 1 até 50 passo 1 {
+        leia(sexo);
+        
+        se(sexo == 1) {
+            leia(altura);
+            soma_m += altura;
+            cont_m ++;
+            se(altura > maior_altura_turma) {
+                maior_altura_turma = altura; 
+            }
+            se(altura < menor_altura_turma) {
+                menor_altura_turma = altura;
+            }
+        }
+        
+        se(sexo == 2){
+           leia(altura);
+           soma_f += altura;
+           cont_f ++;
+           se(altura > maior_altura_turma) {
+               maior_altura_turma = altura; 
+           }
+           se(altura < menor_altura_turma) {
+               menor_altura_turma = altura;
+           } 
+        }
+        
+    }
+    
+    media_f = soma_f / cont_f;
+    media_m = soma_m / cont_m;
+    media_turma = media_f + media_m;
+    
+    escreva("A maior altura da turma eh de: " + maior_altura_turma + "m e a menor eh de: " + menor_altura_turma + "m");
+    escreva("A media da altura das mulheres eh de: " + media_f + "m");
+    escreva("A media da altura da turma eh de: " + media_turma + "m");
+}

@@ -1,0 +1,59 @@
+início {
+    inteiro: n;
+    inteiro: sexo;
+    inteiro: idade_f;
+    real: soma_f;
+    real: media_f;
+    inteiro: cont_f;
+    
+    inteiro: idade_m;
+    real: soma_m;
+    real: media_m;
+    inteiro: cont_m;
+    real: media_g;
+    real: altura_f;
+    real: soma_altura;
+    real: media_altura;
+    inteiro: idade;
+    real: percentual;
+    real: idades;
+    
+    n = 0;
+    cont_f = 0;
+    cont_m = 0;
+    idade = 0;
+    
+    repita {
+        leia("digite o sexo: ", sexo);
+        se(sexo == 0) {
+            cont_f += 1;
+            leia("digite a idade: ", idade_f);
+            soma_f += idade_f;
+            leia("digite altura: ", altura_f);
+            soma_altura += altura_f;
+            se(idade_f >= 18 e idade_f <= 45){
+                idades += 1;
+            }
+        }
+        se(sexo == 1) {
+            cont_m += 1;
+            leia("digite a idade: ", idade_m);
+            soma_m += idade_m;
+            se(idade_m >= 18 e idade_m <= 45){
+                idades += 1;
+            }
+        }
+        n++;
+    } enquanto(n < 1000);
+    
+    media_f = soma_f / cont_f;
+    media_m = soma_m / cont_m;
+    media_g = media_f + media_m;
+    media_altura = soma_altura / cont_f;
+    percentual = (idades / 100) * 5;
+    
+    escreva("a media de idade do grupo eh de: " + media_g);
+    escreva("a media de altura das mulheres eh de: " + media_altura);
+    escreva("a media de idade dos homens eh de: " + media_m);
+    escreva("o percentual eh: " + percentual + "%");
+}

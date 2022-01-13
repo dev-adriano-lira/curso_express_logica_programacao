@@ -1,0 +1,30 @@
+início {
+    inteiro: contador;
+    inteiro: valores;
+    
+    inteiro: maior;
+    inteiro: menor;
+    real: soma;
+    real: media;
+    
+    contador = 0;
+    maior = 0;
+    menor = 9999;
+    
+    enquanto(contador < 20) {
+        leia(valores);
+        soma += valores;
+        se(valores > maior) {
+            maior = valores;
+        }
+        se(valores < menor) {
+            menor = valores;
+        }
+        contador ++;
+    }
+    media = soma / 20;
+    
+    escreva("O maior valor eh: " + maior);
+    escreva("O menor valor eh: " + menor);
+    escreva("A media dos numeros informados eh: " + media);
+}

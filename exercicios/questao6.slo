@@ -1,0 +1,27 @@
+início {
+    
+    inteiro: contador;
+    caractere: nome_cliente;
+    real: valor_compras;
+    real: bonus;
+    real: ganhou;
+    
+    contador = 1;
+    
+    repita {
+        leia("Digite o nome do cliente: ", nome_cliente);
+        leia("Digite o valor da compra: ", valor_compras);
+        
+        se(valor_compras < 500) {
+            bonus = valor_compras * 0.10;
+            escreva("Parabens " + nome_cliente + ". Voce ganhou um bonus de: R$" + bonus);
+        }
+        
+        senão {
+            bonus = valor_compras * 0.15;
+             escreva("Parabens " + nome_cliente + ". Voce ganhou um bonus de: R$" + bonus);
+        }
+        
+        contador ++;
+    } enquanto(contador <= 100);
+}

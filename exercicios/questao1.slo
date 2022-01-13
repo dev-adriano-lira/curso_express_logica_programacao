@@ -1,0 +1,20 @@
+início {
+    inteiro: numeros;
+    real: soma;
+    inteiro: contador;
+    real: media;
+    
+    contador = 1;
+    soma = 0;
+    
+    enquanto (numeros >= 0) {
+        leia(numeros);
+        
+        se(numeros >= 0) {
+            soma += numeros;
+            contador += 1;
+        }
+    }
+     media = soma / (contador - 1);
+     escreva("A media eh: " + media);
+}

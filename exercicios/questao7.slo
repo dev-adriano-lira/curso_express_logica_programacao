@@ -1,0 +1,24 @@
+início {
+    inteiro: contador;
+    
+    caractere: nome_aluno;
+    real: nota1;
+    real: nota2;
+    real: nota3;
+    real: media;
+    
+    contador = 1;
+    
+    repita {
+        leia("Digite o nome do aluno: ", nome_aluno);
+        leia("Digite a primeira nota do aluno: ", nota1);
+        leia("Digite a segunda nota do aluno: ", nota2);
+        leia("Digite a terceita nota do aluno: ", nota3);
+        
+        media = ( nota1 * 2 + nota2 * 4 + nota3 * 3 ) / 10;
+        escreva("A media de ", nome_aluno, " eh de: ", media);
+        
+        contador ++;
+       
+    } enquanto(contador <= 1);
+}

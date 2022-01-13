@@ -1,0 +1,30 @@
+início {
+    inteiro: contador;
+    real: valor;
+    inteiro: codigo;
+    
+    real: novo_preco;
+    real: soma_antiga;
+    real: soma_nova;
+    real: media_antiga;
+    real: media_nova;
+    
+    repita{
+        leia(codigo);
+        se(codigo >= 0){
+            leia(valor);
+            novo_preco = valor * 0.35;
+            soma_antiga += valor;
+            soma_nova += novo_preco;
+                 
+            escreva("o produto " + codigo + " tem o preco de: " + novo_preco);
+            contador ++;
+        }
+    } enquanto(codigo >= 0);
+    
+    media_antiga = soma_antiga / contador;
+    media_nova = soma_nova / contador;
+    
+    escreva("A media sem aumento eh de: " + media_antiga);
+    escreva("A media com aumento eh de: " + media_nova);
+}
